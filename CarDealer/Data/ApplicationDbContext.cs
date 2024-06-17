@@ -16,6 +16,7 @@ namespace CarDealer.Data
 
         public DbSet<Vehicle> Vehicles { get; set; }
 
+        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
 
     }
 

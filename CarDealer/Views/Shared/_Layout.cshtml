@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿﻿@using CarDealer.Utilities
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -27,21 +29,25 @@
                             <a class="nav-link text-dark" asp-area="Customer" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
  
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Menu</a>
-                            <div class="dropdown-menu">
+                          @if (User.IsInRole(CarDealerRoles.Role_Admin))
+                        {
 
-                                <a class="dropdown-item text-light" asp-area="Admin" asp-controller="Make" asp-action="Index">Make</a>
-                                
-                                <div class="dropdown-divider"></div>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Menu</a>
+                                <div class="dropdown-menu">
 
-                                <a class="dropdown-item text-light" asp-area="Admin" asp-controller="VehicleModel" asp-action="Index">VehicleModel</a>
+                                    <a class="dropdown-item text-light" asp-area="Admin" asp-controller="Make" asp-action="Index">Make</a>
 
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item text-light" asp-area="Admin" asp-controller="Vehicle" asp-action="Index">Vehicle</a>
+                                    <div class="dropdown-divider"></div>
 
-                            </div>
-                        </li>
+                                    <a class="dropdown-item text-light" asp-area="Admin" asp-controller="VehicleModel" asp-action="Index">VehicleModel</a>
+
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item text-light" asp-area="Admin" asp-controller="Vehicle" asp-action="Index">Vehicle</a>
+
+                                </div>
+                            </li>
+                        }
                     </ul>
                     <partial name ="_LoginPartial"></partial>>
 

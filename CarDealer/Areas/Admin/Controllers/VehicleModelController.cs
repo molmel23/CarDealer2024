@@ -1,6 +1,8 @@
 ﻿using CarDealer.Data.Repository.Interfaces;
 using CarDealer.Models;
 using CarDealer.Models.ViewModels;
+using CarDealer.Utilities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
@@ -8,6 +10,7 @@ namespace CarDealer.Areas.Admin.Controllers
 {
 
     [Area("Admin")]
+    [Authorize(Roles = CarDealerRoles.Role_Admin)]
     public class VehicleModelController : Controller
     {
         #region Properties_Constructor
